@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
 	  "family": "tinyapp-taskdef",
-      "image": "786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:v_32",
+      "image": "786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:${BUILD_NUMBER}",
 	  "name": "dock-ctnr",
 	  "cpu": "128",
 	  "memory": "1024",
@@ -14,35 +14,7 @@
           "protocol": "tcp",
           "containerPort": 80
         }
-      ],
+      ]
     }
-  ],
-  "placementConstraints": [],
-  "memory": "1024",
-  "taskRoleArn": "arn:aws:iam::786148255523:role/ecsTaskExecutionRole",
-  "compatibilities": [
-    "EC2"
-  ],
-  "taskDefinitionArn": "arn:aws:ecs:us-west-2:786148255523:task-definition/tinyapp-taskdef:4",
-  
-  "requiresAttributes": [
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.ecr-auth"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.task-iam-role"
-    }
-  ],
-  "requiresCompatibilities": [
-    "EC2"
-  ],
-  "networkMode": "bridge",
-  "cpu": "128",
-  "volumes": []
+  ]
 }
