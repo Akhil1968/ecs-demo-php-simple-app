@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
 	  "family": "tinyapp-taskdef",
-      "image": "786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:v1",
+      "image": "786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:${BUILD_NUMBER}",
 	  "name": "dock-ctnr",
 	  "cpu": "128",
 	  "memory": "1024",
