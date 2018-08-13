@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
 	  "family": "tinyapp-taskdef",
-      "image": "786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:${BUILD_NUMBER}",
+          "image": "786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:${BUILD_NUMBER}",
 	  "name": "dock-ctnr",
 	  "cpu": "128",
 	  "memory": "1024",
@@ -23,7 +23,7 @@
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-west-2:786148255523:task-definition/tinyapp-taskdef:4",
+  "taskDefinitionArn": "arn:aws:ecs:us-west-2:786148255523:task-definition/tinyapp-taskdef:5",
   
   "requiresAttributes": [
     {
