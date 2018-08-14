@@ -1,0 +1,50 @@
+------install docker and git -------
+Create a EC2 instance using an Amazon AMI, that has container-agent pre-installed.
+	Use Putty to connect to the instance
+	ec2-user@http://54.189.131.110
+
+Update Installed OS Packages: 
+	sudo su
+	yum update -y
+	
+--- install docker ------
+Install Docker
+	yum install -y docker
+	
+Start the Docker service
+	service docker start
+	
+Add the ec2-user to the docker group
+	usermod -a -G docker ec2-user
+	
+Check docker info
+	docker info
+
+
+---Install Git and push docker image to ECR ----
+
+Install git
+	sudo yum install -y git
+Clone the simple PHP application:
+	git clone https://github.com/awslabs/ecs-demo-php-simple-app
+Examine the Dockerfile
+	cd ecs-demo-php-simple-app
+	cat Dockerfile
+Build your Docker image
+	docker build -t tinyapp .
+
+Check Docker images
+	docker images
+
+Run the newly built image and test it on browser
+	docker run -p 80:80 tinyapp
+
+After the build completes, Login to ECR 
+	$(aws ecr get-login --no-include-email --region us-west-2)
+
+Tag your docker image:
+	docker tag tinyapp:latest 786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:v1
+
+Push image to ECR
+	docker push 786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:v1
+ 

@@ -1,0 +1,26 @@
+-------Setup Jenkins on an EC2 instance having Amazon Linux AMI-------
+
+connect to EC2 instance using putty
+	sudo su
+	yum update -y
+
+Jenkins requires Java 1.8. However, Amazon Linux comes pre-installed with Java 1.7. So, replace 1.7 with 1.8.
+	yum install java-1.8.0
+	yum remove java-1.7.0-openjdk
+	
+jq is a command-line utility for parsing JSON output. It will be used in CICD deploy script 
+    yum install jq -y
+	  
+Add the Jenkins repository URL to yum so that yum knows where to install Jenkins from.
+	wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+
+Add the Jenkins GPG key to our trusted keys so that we’re able to install Jenkins, verifying that the files are being sourced from a trusted location
+	rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
+
+After readying our environment with the required dependancies, now we can install Jenkins
+	yum install jenkins
+
+Run the following commands to add user jenkins to docker demon process
+	usermod -a -G docker jenkins
+	service jenkins start
+
