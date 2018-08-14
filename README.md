@@ -6,13 +6,14 @@ This document aims to create a CICD pipeline for a development environment where
   -it runs in an AWS ECS cluster. 
 
 The CICD pipeline is established by jenkins running in an EC2 standalone instance.
+Architecture Sketch: https://github.com/Akhil1968/ecs-demo-php-simple-app/blob/master/App-arch.png
 
 This document is based on: 
       Amazon Codebase:   https://github.com/aws-samples/ecs-demo-php-simple-app
       Directions on how to run this sample app on Amazon ECS can be found in the documentation: [Docker       basics]
       http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
 
-Here are the steps----
+# Here are the steps----
 
 Step 1: Create an ECR repository in AWS ECS. This repository is going to store your docker images.
 
