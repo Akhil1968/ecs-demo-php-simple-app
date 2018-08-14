@@ -23,7 +23,7 @@
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-west-2:786148255523:task-definition/tinyapp-taskdef:5",
+  "taskDefinitionArn": "arn:aws:ecs:us-west-2:786148255523:task-definition/tinyapp-taskdef:${BUILD_NUMBER}",
   
   "requiresAttributes": [
     {
