@@ -28,8 +28,7 @@ Step 3: Create a VPC with a couple of public subnets. Within that VPC, create th
     -a load balancer and 
     -an ECS service. 
 
-Step 4: Check that your ECS cluster is running your container instances, service and task(s). 
-    Also check that you are able to access your tasks using the load balancer DNS URL.
+Step 4: Check that your ECS cluster is running your container instances, service and task(s). For this paste the DNS URL of load balancer in your browser's address bar.
 
 Step 5: Use the same EC2 standalone instance (created in Step 1) to setup Jenkins for CICD pipeline. 
     Make sure the security group allows access to http ports 80 and 8080.  
@@ -40,7 +39,7 @@ Step 6: Login to Jenkins server using your browser.
     - Create a new jenkins job in which
         -- provide the Github URL https://github.com/Akhil1968/ecs-demo-php-simple-app.git
         -- add two excute shell scripts
-            --- one for pulling building PHP source code from github, building docker image and pushing it to the ECR registry created in the first step. Build Shell script code- https://github.com/Akhil1968/ecs-demo-php-simple-app/blob/master/build.sh.
+            --- one for pulling PHP source code from github, building docker image and pushing it to the ECR registry created in the first step. Build Shell script is available here- https://github.com/Akhil1968/ecs-demo-php-simple-app/blob/master/build.sh.
             --- the other shell script is a deployment shell script which updates the ECS service. The code for the deploy shell script is here- https://github.com/Akhil1968/ecs-demo-php-simple-app/blob/master/deploy.sh.
             
 Step 7: Test the jenkins job by clicking "Build Now" link the the jenkins job created in the previous step.
