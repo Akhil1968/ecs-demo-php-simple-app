@@ -15,7 +15,7 @@ c<!DOCTYPE html>
     <body>
         <div class="container">
             <div class="hero-unit">
-                <h1>Happy Independence Day!</h1>
+                <h1>Happy Independence Day 2018!</h1>
                 <h2>Congratulations</h2>
                 <p>Your PHP application is now running on a container in Amazon ECS.</p>
                 <p>The container is running PHP version <?php echo phpversion(); ?>.</p>
