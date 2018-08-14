@@ -8,9 +8,11 @@ TASK_FAMILY="tinyapp-taskdef"
 
 #create a new task def for this build
 
-sed -e "s;%BUILD_NUMBER%;${BUILD_NUMBER};g"  tinyapp.json  > tinyapp-v_${BUILD_NUMBER}.json
+sed -e "s;%BUILD_NUMBER%;${BUILD_NUMBER};g"  tinyapp.json  > tinyapp${BUILD_NUMBER}.json
 echo "new json created successfully"
-aws ecs register-task-definition --family ${TASK_FAMILY} --region ${REGION} --cli-input-json "file://tinyapp-v_${BUILD_NUMBER}.json"
+
+# register-task-definition
+aws ecs register-task-definition --family ${TASK_FAMILY} --cli-input-json file://tinyapp${BUILD_NUMBER}.json
 echo "aws ecs register-task-definition executed successfully"
 
 #update the service with new task def and desired count
