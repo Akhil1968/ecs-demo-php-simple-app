@@ -34,13 +34,13 @@ Step 5: Use the same EC2 standalone instance (created in Step 1) to setup Jenkin
     Make sure the security group allows access to http ports 80 and 8080.  
     Instructions: https://github.com/Akhil1968/ecs-demo-php-simple-app/blob/master/install-jenkins.txt
     
-Step 6: Login to Jenkins server using your browser. 
-    - install standard jenkins plugins
-    - Create a new jenkins job in which
-        -- provide the Github URL https://github.com/Akhil1968/ecs-demo-php-simple-app.git
-        -- add two excute shell scripts
-            --- one for pulling PHP source code from github, building docker image and pushing it to the ECR registry created in the first step. Build Shell script is available here- https://github.com/Akhil1968/ecs-demo-php-simple-app/blob/master/build.sh.
-            --- the other shell script is a deployment shell script which updates the ECS service. The code for the deploy shell script is here- https://github.com/Akhil1968/ecs-demo-php-simple-app/blob/master/deploy.sh.
+Step 6: Login to Jenkins server using your browser and install standard jenkins plugins. 
+
+Create a new jenkins job in which under source code management section provide the Github URL https://github.com/Akhil1968/ecs-demo-php-simple-app.git. 
+
+In the same jenkins job under build section add two excute shell scripts. First shell script is a build script which pulls PHP source code from github, builds docker image and pushes it to the ECR registry. The Build Shell script is available here- https://github.com/Akhil1968/ecs-demo-php-simple-app/blob/master/build.sh.
+
+The other shell script is a deployment shell script which updates the ECS service. The code for the deploy shell script is here- https://github.com/Akhil1968/ecs-demo-php-simple-app/blob/master/deploy.sh.
             
 Step 7: Test the jenkins job by clicking "Build Now" link the the jenkins job created in the previous step.
 
