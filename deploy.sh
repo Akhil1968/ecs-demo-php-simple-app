@@ -1,8 +1,8 @@
 #!/bin/bash
 
-REGION=us-west-2
-SERVICE_NAME=tiny-svc
-CLUSTER=tiny-cluster
+REGION="us-west-2"
+SERVICE_NAME="movie-svc"
+CLUSTER="theater"
 IMAGE_VERSION="v_"${BUILD_NUMBER}
 TASK_FAMILY="tinyapp-taskdef"
 
@@ -14,7 +14,7 @@ aws ecs register-task-definition --family ${TASK_FAMILY} --region ${REGION} --cl
 echo "aws ecs register-task-definition executed successfully"
 
 #update the service with new task def and desired count
-REVISION=`aws ecs describe-task-definition   --task-definition tinyapp | egrep "revision" | tr "/"  " " | awk '{print $2}' | sed 's/"$//' `
+REVISION=`aws ecs describe-task-definition --task-definition ${TASK_FAMILY} --region ${REGION} | egrep "revision" | tr "/"  " " | awk '{print $2}' | sed 's/"$//'`
 SERVICES=`aws ecs describe-services --services ${SERVICE_NAME}  --cluster ${CLUSTER}  --region ${REGION} | jq .failures[]`
 echo "Variables REVISION and SERVICES assigned successfully"
 #create or Update service
