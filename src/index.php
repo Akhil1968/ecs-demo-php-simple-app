@@ -17,7 +17,7 @@ c<!DOCTYPE html>
             <div class="hero-unit">
                 <h1>Happy Independence Day!</h1>
                 <h2>15th August, 2018</h2>
-                <p>ECS jenkins and Github</p>
+                <p>CICD using ECS, jenkins and Github</p>
                 <p>The container is running PHP version <?php echo phpversion(); ?>.</p>
                 <?php
                         $myfile = fopen("/var/www/my-vol/date", "r") or die("");
