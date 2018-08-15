@@ -8,7 +8,7 @@ TASK_FAMILY="tinyapp-taskdef"
 
 #create a new task def for this build
 
-sed -e "s;%BUILD_NUMBER%;${BUILD_NUMBER};g"  tinyapp.json  > tinyapp${BUILD_NUMBER}.json
+sed -e "s/%BUILD_NUMBER%/${BUILD_NUMBER}/g"  tinyapp.json  > tinyapp${BUILD_NUMBER}.json
 echo "new json created successfully"
 
 # register-task-definition
