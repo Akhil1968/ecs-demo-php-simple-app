@@ -17,7 +17,7 @@ c<!DOCTYPE html>
             <div class="hero-unit">
                 <h1>Happy Independence Day 2018!</h1>
                 <h2>72nd year of Independence</h2>
-                <p>Your PHP application is now running on a container in Amazon ECS.</p>
+                <p>ECS jenkins and Github</p>
                 <p>The container is running PHP version <?php echo phpversion(); ?>.</p>
                 <?php
                         $myfile = fopen("/var/www/my-vol/date", "r") or die("");
