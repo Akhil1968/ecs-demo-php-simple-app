@@ -1,19 +1,21 @@
 #!/bin/bash
 
 REGION="us-west-2"
-SERVICE_NAME="movie-svc"
-CLUSTER="theater"
+SERVICE_NAME="tiny-svc"
+CLUSTER="tiny-cluster"
 IMAGE_VERSION="v_"${BUILD_NUMBER}
-TASK_FAMILY="tinyapp-taskdef"
+TASK_FAMILY="tiny-taskdef"
 
 #create a new task def for this build
 
-sed -e "s/%BUILD_NUMBER%/${BUILD_NUMBER}/g"  tinyapp.json  > tinyapp${BUILD_NUMBER}.json
+sed -e "s/BUILD_NUMBER/${BUILD_NUMBER}/g"  tinyapp.json  > tinyapp_moddified.json
 echo "new json created successfully"
 
 # register-task-definition
-aws ecs register-task-definition --family ${TASK_FAMILY} --cli-input-json file://tinyapp${BUILD_NUMBER}.json
+aws ecs register-task-definition --region ${REGION} --cli-input-json file://tinyapp_moddified.json
 echo "aws ecs register-task-definition executed successfully"
+echo "Modified task defenition is ------------"
+echo `aws ecs describe-task-definition --task-definition ${TASK_FAMILY} --region ${REGION}`
 
 #update the service with new task def and desired count
 REVISION=`aws ecs describe-task-definition --task-definition ${TASK_FAMILY} --region ${REGION} | egrep "revision" | tr "/"  " " | awk '{print $2}' | sed 's/"$//'`
