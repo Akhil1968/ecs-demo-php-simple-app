@@ -15,8 +15,8 @@ c<!DOCTYPE html>
     <body>
         <div class="container">
             <div class="hero-unit">
-                <h1>Happy Independence Day!</h1>
-                <h2>15th August, 2018</h2>
+                <h1>Hi Everyone!</h1>
+                <h2>16th August, 2018</h2>
                 <p>CICD using ECS, jenkins and Github</p>
                 <p>The container is running PHP version <?php echo phpversion(); ?>.</p>
                 <?php
