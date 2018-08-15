@@ -2,7 +2,7 @@
   "family": "tiny-taskdef",
   "containerDefinitions": [
     {
-          "image": "786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:${BUILD_NUMBER}",
+          "image": "786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:v_${BUILD_NUMBER}",
 	  "name": "tiny-ctnr",
 	  "cpu": 0,
 	  "memory": null,
