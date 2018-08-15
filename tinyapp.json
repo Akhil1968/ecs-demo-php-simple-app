@@ -1,6 +1,5 @@
 {
   "family": "tiny-taskdef",
-  "executionRoleArn": null,
   "containerDefinitions": [
     {
           "image": "786148255523.dkr.ecr.us-west-2.amazonaws.com/tinyapp:${BUILD_NUMBER}",
@@ -17,3 +16,4 @@
       ]
     }
   ]
+}
