@@ -15,8 +15,8 @@ c<!DOCTYPE html>
     <body>
         <div class="container">
             <div class="hero-unit">
-                <h1>Happy Independence Day 2018!</h1>
-                <h2>72nd year of Independence</h2>
+                <h1>Happy Independence Day!</h1>
+                <h2>15th August, 2018</h2>
                 <p>ECS jenkins and Github</p>
                 <p>The container is running PHP version <?php echo phpversion(); ?>.</p>
                 <?php
