@@ -16,7 +16,7 @@ c<!DOCTYPE html>
         <div class="container">
             <div class="hero-unit">
                 <h1>Hi Everyone!</h1>
-                <h2>Welcome back. Today is August 16th, 2018</h2>
+                <h2>Welcome back friends. Today is August 16th, 2018</h2>
                 <p>CI-CD Pipeline using ECS, jenkins and Github</p>
             </div>
         </div>
