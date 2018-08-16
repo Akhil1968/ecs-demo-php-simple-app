@@ -16,15 +16,8 @@ c<!DOCTYPE html>
         <div class="container">
             <div class="hero-unit">
                 <h1>Hi Everyone!</h1>
-                <h2>16th August, 2018</h2>
+                <h2>Welcome back. Today is August 16th, 2018</h2>
                 <p>CI-CD Pipeline using ECS, jenkins and Github</p>
-                <p>The container is running PHP version <?php echo phpversion(); ?>.</p>
-                <?php
-                        $myfile = fopen("/var/www/my-vol/date", "r") or die("");
-                        echo fread($myfile,filesize("/var/www/my-vol/date"));
-                        fclose($myfile);
-                ?>
-
             </div>
         </div>
 
