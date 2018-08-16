@@ -57,11 +57,11 @@ Step 9: Setup jenkins server to respond to GitHub trigger.
       
  Step 10: Go to your github repository and make a code change. Check your service in ECS and see that it migrates through the following 5 events. If you check your loadbalancer's URL in the mid time, you get 502 Bad Gateway error for roughly 5 mins. When your ECS sevice's Events tab shows this status "service xxxx has reached a steady state", your webpage starts working. :)
  
--service xxx has reached a steady state
--service xxx has started 1 tasks: task xxxx.
--service xxx has stopped 1 running tasks: task xxxx.
--service xxx has begun draining connections on 1 tasks.
--service x deregistered 1 targets in target-group tinytg
+  -service xxx has reached a steady state
+  -service xxx has started 1 tasks: task xxxx.
+  -service xxx has stopped 1 running tasks: task xxxx.
+  -service xxx has begun draining connections on 1 tasks.
+  -service x deregistered 1 targets in target-group tinytg
  
             
     
