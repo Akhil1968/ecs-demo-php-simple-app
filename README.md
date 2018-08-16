@@ -44,11 +44,17 @@ The other shell script is a deployment shell script which updates the ECS servic
             
 Step 7: Test the jenkins job by clicking "Build Now" link the the jenkins job created in the previous step.
 
-Step 8: This step will fully automate the CICD pipeline, so that when any code commit happens in your GitHub account, 
+Step 8: This step and the next will fully automate the CICD pipeline, so that when any code commit happens in your GitHub account, 
      the jenkin server gets triggered which in turn creates a new docker image, pushes it to ECR and updates th ECS service. 
-    For this -
-        -install Jenkins plugin in github and provide the URL of your jenkins server in your github account. 
-         This will trigger the jenkins server.
-        -setup jenkins server to respond to GitHub trigger.
+    
+      Execute the following sub-steps to achieve this automation -
+        -install Jenkins plugin in github by going to setings page.
+        -once the plugin is chosen, provide the URL of your jenkins server using the URL x.x.x.x:8080/web-hook/. This will trigger the jenkins server on any code commit to the current repository.
+Step 9: Setup jenkins server to respond to GitHub trigger. 
+      -Login to your jenkins account and go to Manage Jenkins-->Manage Plugins page. Install "Github Integration plugin" and restart jenkins. 
+      - After jenkins restarts, open you jenkins job and then click the configure link on left panel. In  "General" tab of the Configure page, provide Github project URL. Under "Buid Triggers" tab, check the checkbox "GitHub hook trigger for GITScm polling".  Click Apply and Save.
+      
+ Step 10: Go to your github repository and make a code change. Check your service in ECS and see that it goes through 6 events. Your applications web page will be down for some time (5 mins approx). When your ECS sevice's Events tab shows this status "service xxxx has reached a steady state", your webpage starts working. :)
+ 
             
     
