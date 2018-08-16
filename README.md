@@ -48,8 +48,9 @@ Step 8: This step and the next will fully automate the CICD pipeline, so that wh
      the jenkin server gets triggered which in turn creates a new docker image, pushes it to ECR and updates th ECS service. 
     
       Execute the following sub-steps to achieve this automation -
-        -install Jenkins plugin in github by going to setings page.
-        -once the plugin is chosen, provide the URL of your jenkins server using the URL x.x.x.x:8080/web-hook/. This will trigger the jenkins server on any code commit to the current repository.
+        -install Jenkins plugin in github by going to setings page and then clicking "Integrations and Services" link on left panel.
+        -Search for "Jenkins" plugin in "available pluins" tab. Choose it and provide the URL of your jenkins server using the URL x.x.x.x:8080/github-webhook/. This will trigger the jenkins server upon any code commit to the current repository.
+        
 Step 9: Setup jenkins server to respond to GitHub trigger. 
       -Login to your jenkins account and go to Manage Jenkins-->Manage Plugins page. Install "Github Integration plugin" and restart jenkins. 
       - After jenkins restarts, open you jenkins job and then click the configure link on left panel. In  "General" tab of the Configure page, provide Github project URL. Under "Buid Triggers" tab, check the checkbox "GitHub hook trigger for GITScm polling".  Click Apply and Save.
