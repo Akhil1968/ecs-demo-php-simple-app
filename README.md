@@ -55,7 +55,13 @@ Step 9: Setup jenkins server to respond to GitHub trigger.
       -Login to your jenkins account and go to Manage Jenkins-->Manage Plugins page. Install "Github Integration plugin" and restart jenkins. 
       - After jenkins restarts, open you jenkins job and then click the configure link on left panel. In  "General" tab of the Configure page, provide Github project URL. Under "Buid Triggers" tab, check the checkbox "GitHub hook trigger for GITScm polling".  Click Apply and Save.
       
- Step 10: Go to your github repository and make a code change. Check your service in ECS and see that it goes through 6 events. Your applications web page will be down for some time (5 mins approx). When your ECS sevice's Events tab shows this status "service xxxx has reached a steady state", your webpage starts working. :)
+ Step 10: Go to your github repository and make a code change. Check your service in ECS and see that it migrates through the following 5 events. If you check your loadbalancer's URL in the mid time, you get 502 Bad Gateway error for roughly 5 mins. When your ECS sevice's Events tab shows this status "service xxxx has reached a steady state", your webpage starts working. :)
+ 
+-service xxx has reached a steady state
+-service xxx has started 1 tasks: task xxxx.
+-service xxx has stopped 1 running tasks: task xxxx.
+-service xxx has begun draining connections on 1 tasks.
+-service x deregistered 1 targets in target-group tinytg
  
             
     
