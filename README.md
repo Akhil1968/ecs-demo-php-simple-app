@@ -15,20 +15,20 @@ This document is based on:
 
 # Here are the steps----
 
-- Step 1: Create an ECR repository in AWS ECS. This repository is going to store your docker images.
+- ### Step 1: Create an ECR repository in AWS ECS. This repository is going to store your docker images.
 
-- Step 2: Create an EC2 instance based on an Amazon Linux instance AMI. 
+- ### Step 2: Create an EC2 instance based on an Amazon Linux instance AMI. 
       This standalone EC2 instance will be used to build docker image and push the image to ECR. 
       Instructions: https://github.com/Akhil1968/ecs-demo-php-simple-app/blob/master/install-docker-git.txt
 
-- Step 3: Create a VPC with a couple of public subnets. Within that VPC, create the following-
+- ### Step 3: Create a VPC with a couple of public subnets. Within that VPC, create the following-
     -an ECS Cluster, 
     -an ECS Task defition(using the docker image pushed in ECR in step 1), 
     -a task, 
     -a load balancer and 
     -an ECS service. 
 
-- Step 4: Check that your ECS cluster is running your container instances, service and task(s). For this paste the DNS URL of load balancer in your browser's address bar.
+- ### Step 4: Check that your ECS cluster is running your container instances, service and task(s). For this paste the DNS URL of load balancer in your browser's address bar.
 
 - Step 5: Use the same EC2 standalone instance (created in Step 1) to setup Jenkins for CICD pipeline. 
     Make sure the security group allows access to http ports 80 and 8080.  
